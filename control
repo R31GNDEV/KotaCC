@@ -1,0 +1,9 @@
+Package: gay.kota.kotacc
+Name: KotaCC
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Add Glow to CC
+Maintainer: Kota
+Author: Kota
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), ws.hbang.alderis (>= 1.1)
