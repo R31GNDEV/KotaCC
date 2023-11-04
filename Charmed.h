@@ -71,8 +71,7 @@ Header(s) *meow*
 	UIPreviewInteraction* _previewInteraction;
 	UIEdgeInsets _expandedContentEdgeInsets;
 }
-@property (nonatomic,copy) NSString * moduleIdentifier;                                                                    //@synthesize moduleIdentifier=_moduleIdentifier - In the implementation block
-@property (nonatomic,retain) id<CCUIContentModule> contentModule;                                                          //@synthesize contentModule=_contentModule - In the implementation block
+@property (nonatomic,copy) NSString * moduleIdentifier;                                                          //@synthesize contentModule=_contentModule - In the implementation block
 @property (nonatomic,retain) UIViewController * backgroundViewController;                                                  //@synthesize backgroundViewController=_backgroundViewController - In the implementation block
 @property (assign,nonatomic) BOOL contentModuleProvidesOwnPlatter;                                                         //@synthesize contentModuleProvidesOwnPlatter=_contentModuleProvidesOwnPlatter - In the implementation block
 @property (nonatomic,retain) UIView * highlightWrapperView;                                                                //@synthesize highlightWrapperView=_highlightWrapperView - In the implementation block

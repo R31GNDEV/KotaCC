@@ -1,6 +1,6 @@
 Package: gay.kota.kotacc
 Name: KotaCC
-Version: 0.0.1
+Version: 0.5.2
 Architecture: iphoneos-arm
 Description: Add Glow to CC
 Maintainer: Kota

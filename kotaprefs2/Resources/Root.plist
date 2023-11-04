@@ -24,6 +24,18 @@
 		</dict>
 		<dict>
 			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>gay.kota.kotacc</string>
+			<key>key</key>
+			<string>platterView</string>
+			<key>label</key>
+			<string>Platter View</string>
+		</dict>
+		<dict>
+			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>cellClass</key>
 			<string>HBColorPickerTableCell</string>

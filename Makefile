@@ -10,7 +10,7 @@ KotaCC_EXTRA_FRAMEWORKS += Alderis
 ARCHS = arm64 arm64e
 
 include $(THEOS)/makefiles/common.mk
-
+FINALPACKAGE = 1
 TWEAK_NAME = KotaCC
 
 KotaCC_FILES = $(wildcard *.x)

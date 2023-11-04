@@ -1,8 +1,8 @@
 /*
-KotaCC
+Charmed
 */
 
-#include "kotacc.h"
+#include "Charmed.h"
 
 UIColor* colorFromHexString(NSString* hexString) {
     NSString *daString = [hexString stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -31,10 +31,11 @@ BOOL moduleProvidesOwnPlatter;
 /*
 My Hooks
 */
-
+/*
 %hook SBControlCenterWindow
 
 -(UIColor *)setFill {
+    NSLog(@"Boobs are out");
     NSString *ccBackgroundColorString = [_preferences objectForKey:@"CCbackgroundColor"];
     if (ccBackgroundColorString) {
       self.backgroundColor = colorFromHexString(ccBackgroundColorString);
@@ -43,7 +44,7 @@ My Hooks
 }
 
 %end
-
+*/
 %hook CCUIContentModuleContentContainerView
 
 -(NSArray *)subviews {
@@ -72,23 +73,9 @@ My Hooks
 }
 
 -(void)setModuleProvidesOwnPlatter:(bool)arg1 {
+  if ([_preferences boolForKey:@"platterView"]) {
   %orig(YES);
-}
-
-%end
-
-%hook CCUIModuleCollectionView
-
--(CALayer *)layer {
-  CALayer *origLayer = %orig;
-  NSString *glowColorString = [_preferences objectForKey:@"shadowColor"];
-  NSLog(@"[*]Kota CC Glow: %@",glowColorString);
-  if (glowColorString) {
-    origLayer.shadowColor = colorFromHexString(glowColorString).CGColor;
   }
-  origLayer.shadowOpacity = 1;
-  origLayer.shadowOffset = CGSizeMake(-3.0f,-3.0f);
-  return origLayer;
 }
 
 %end
@@ -101,6 +88,7 @@ Init prefs
 	_preferences = [[NSUserDefaults alloc] initWithSuiteName:@"gay.kota.kotacc"];
 	[_preferences registerDefaults:@{
 		@"enabled" : @YES,
+    @"platterView" : @YES,
 	}];
 	_enabled = [_preferences boolForKey:@"enabled"];
 	if(_enabled) {
